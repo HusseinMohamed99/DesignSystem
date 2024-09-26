@@ -66,7 +66,7 @@ A **Design System** is a comprehensive guide that defines the design standards, 
 
 ## Documentation & Usage 📖
 
-- 🛠️ **How-to Guides**: Detailed instructions on using the design system in design tools like Figma or Sketch, and in codebases such as React or Flutter.
+- 🛠️ **How-to Guides**: Detailed instructions on using the design system in design tools like Figma or Sketch, and in codebases such as Flutter.
 
 ---
 
