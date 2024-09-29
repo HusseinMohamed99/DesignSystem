@@ -17,6 +17,7 @@ void main() {
     '$projectPath/helpers/functions',
     '$projectPath/helpers/value_manager',
     '$projectPath/helpers/app_string',
+    '$projectPath/helpers/export_manager',
     '$projectPath/di',
     '$projectPath/networking',
     '$projectPath/networking/apis',
