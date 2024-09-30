@@ -8,3 +8,5 @@ part './../app_string/validation_message.dart';
 part './../responsive/responsive_font_size.dart';
 part './../responsive/spacing.dart';
 part './../validations/validation_manager.dart';
+
+part './../functions/remove_spacing.dart';
