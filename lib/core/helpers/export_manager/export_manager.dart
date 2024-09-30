@@ -12,3 +12,8 @@ part './../responsive/spacing.dart';
 part './../validations/validation_manager.dart';
 
 part './../extensions/navigation_extensions.dart';
+part './../extensions/text_styles_extensions.dart';
+part './../../theming/style_manager/font_weight.dart';
+part './../../theming/style_manager/text_style.dart';
+part './../../theming/style_manager/font_size.dart';
+part './../../theming/style_manager/font_family.dart';
