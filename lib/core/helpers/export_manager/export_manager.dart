@@ -28,3 +28,5 @@ part './../responsive/responsive_font_size.dart';
 part './../validations/validation_manager.dart';
 part './../value_manager/margin_helper.dart';
 part './../value_manager/padding_helper.dart';
+
+part './../extensions/align_extension.dart';
