@@ -32,3 +32,4 @@ part './../value_manager/padding_helper.dart';
 part './../extensions/align_extension.dart';
 part './../extensions/theme_extension.dart';
 part './../extensions/color_extension.dart';
+part './../extensions/snack_bar_extension.dart';

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of './../export_manager/export_manager.dart';
 
 extension SnackBarExtension on BuildContext {
   void showSnackBar(String message) {
