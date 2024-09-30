@@ -10,3 +10,5 @@ part './../functions/remove_spacing.dart';
 part './../responsive/responsive_font_size.dart';
 part './../responsive/spacing.dart';
 part './../validations/validation_manager.dart';
+
+part './../extensions/navigation_extensions.dart';
