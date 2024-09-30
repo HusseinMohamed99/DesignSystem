@@ -1,4 +1,4 @@
-part of './../export_manager/export_manager.dart';
+part of '../export_manager/export_manager.dart';
 
 class ValidationMessage {
   //Email Validate
