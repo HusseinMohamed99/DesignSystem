@@ -16,6 +16,7 @@ extension ColorExtension on BuildContext {
   // Accessing Theme once and reusing it
   ThemeData get _theme => Theme.of(this);
   ColorScheme get _colorScheme => _theme.colorScheme;
+  AppBarTheme get appBarTheme => _theme.appBarTheme;
 
   // General Theme Colors
   Brightness get brightness => _colorScheme.brightness;
@@ -95,4 +96,13 @@ extension ColorExtension on BuildContext {
   Color get outlineVariant => _colorScheme.outlineVariant;
   Color get scrim => _colorScheme.scrim;
   Color get shadow => _colorScheme.shadow;
+
+// AppBar Theme
+  Color? get appBarThemeBackgroundColor =>
+      Theme.of(this).appBarTheme.backgroundColor;
+  Color? get appBarThemeForegroundColor =>
+      Theme.of(this).appBarTheme.foregroundColor;
+  Color? get appBarThemeSurfaceTintColor =>
+      Theme.of(this).appBarTheme.surfaceTintColor;
+  Color? get appBarThemeShadowColor => Theme.of(this).appBarTheme.shadowColor;
 }
