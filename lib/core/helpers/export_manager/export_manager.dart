@@ -29,7 +29,7 @@ part './../extensions/theme_extension.dart';
 part './../extensions/widget_extension.dart';
 part './../functions/app_logs.dart';
 part './../functions/remove_spacing.dart';
-part './../functions/select_photo_from_galrrey_or_camera.dart';
+part './../functions/select_photo_from_gallery_or_camera.dart';
 part './../functions/url_launcher.dart';
 part './../responsive/responsive_font_size.dart';
 part './../validations/validation_manager.dart';
