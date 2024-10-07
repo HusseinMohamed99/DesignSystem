@@ -11,6 +11,7 @@ ApiErrorModel _$ApiErrorModelFromJson(Map<String, dynamic> json) =>
       message: json['message'] as String?,
       code: (json['code'] as num?)?.toInt(),
       status: json['status'] as bool?,
+      errors: json['data'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ApiErrorModelToJson(ApiErrorModel instance) =>
@@ -18,4 +19,5 @@ Map<String, dynamic> _$ApiErrorModelToJson(ApiErrorModel instance) =>
       'message': instance.message,
       'code': instance.code,
       'status': instance.status,
+      'data': instance.errors,
     };

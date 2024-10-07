@@ -1,7 +1,6 @@
 import 'dart:developer';
 
 import 'package:design_system/core/helpers/constants/keys.dart';
-import 'package:design_system/core/helpers/string_manager/api_error_messages.dart';
 import 'package:design_system/core/networking/apis/api_error_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
