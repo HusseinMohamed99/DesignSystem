@@ -1,6 +1,8 @@
 part of './core/helpers/export_manager/export_manager.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  setupGetIt();
   await ScreenUtil.ensureScreenSize();
 
   runApp(const MyApp());
@@ -23,14 +25,15 @@ class MyApp extends StatelessWidget {
             ),
             child: MaterialApp(
               builder: (context, child) => ResponsiveBreakpoints.builder(
-        child: child!,
-        breakpoints: [
-          const Breakpoint(start: 0, end: 450, name: MOBILE),
-          const Breakpoint(start: 451, end: 800, name: TABLET),
-          const Breakpoint(start: 801, end: 1920, name: DESKTOP),
-          const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
-        ],
-      ),
+                child: child!,
+                breakpoints: [
+                  const Breakpoint(start: 0, end: 450, name: MOBILE),
+                  const Breakpoint(start: 451, end: 800, name: TABLET),
+                  const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+                  const Breakpoint(
+                      start: 1921, end: double.infinity, name: '4K'),
+                ],
+              ),
               title: 'Flutter Demo',
               theme: ThemeData(
                 // This is the theme of your application.
