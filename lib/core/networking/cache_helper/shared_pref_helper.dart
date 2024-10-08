@@ -1,9 +1,16 @@
 part of './../../helpers/export_manager/export_manager.dart';
 
+const String PREFS_KEY_LANG = "PREFS_KEY_LANG";
+const String PREFS_KEY_THEME = "PREFS_KEY_THEME";
+const String PREFS_KEY_ON_BOARDING_SCREEN_VIEWED =
+    "PREFS_KEY_ON_BOARDING_SCREEN_VIEWED";
+const String PREFS_KEY_IS_USER_LOGGED_IN = "PREFS_KEY_IS_USER_LOGGED_IN";
+
 /// Utility class for managing SharedPreferences and FlutterSecureStorage operations.
 class SharedPrefHelper {
   // Private constructor to prevent instantiation.
-  SharedPrefHelper._();
+  final SharedPreferences _sharedPreferences;
+  SharedPrefHelper(this._sharedPreferences);
 
   // Singleton instance for SharedPreferences.
   static final Future<SharedPreferences> _prefs =
@@ -114,4 +121,67 @@ class SharedPrefHelper {
     debugPrint('FlutterSecureStorage: Removing data with key: $key');
     await _secureStorage.delete(key: key);
   }
+
+  String getAppLanguage() {
+    String? language = _sharedPreferences.getString(PREFS_KEY_LANG);
+    if (language != null && language.isNotEmpty) {
+      return language;
+    } else {
+      // return default lang
+      return LanguageType.english.getValue();
+    }
+  }
+
+  bool isEnglish() {
+    return getAppLanguage() == LanguageType.english.getValue();
+  }
+
+  Future<void> changeAppLanguage() async {
+    String currentLang = getAppLanguage();
+
+    if (currentLang == LanguageType.arabic.getValue()) {
+      // set english
+      _sharedPreferences.setString(
+          PREFS_KEY_LANG, LanguageType.english.getValue());
+    } else {
+      // set arabic
+      _sharedPreferences.setString(
+          PREFS_KEY_LANG, LanguageType.arabic.getValue());
+    }
+  }
+
+  Locale getLocal() {
+    String currentLang = getAppLanguage();
+
+    if (currentLang == LanguageType.arabic.getValue()) {
+      return arabicLocal;
+    } else {
+      return englishLocal;
+    }
+  }
+
+  //OnBoarding
+  // Future<void> setOnBoardingScreenViewed() async {
+  //   _sharedPreferences.setBool(PREFS_KEY_ON_BOARDING_SCREEN_VIEWED, true);
+  // }
+  //
+  // Future<bool> isOnBoardingScreenViewed() async {
+  //   return _sharedPreferences.getBool(PREFS_KEY_ON_BOARDING_SCREEN_VIEWED) ?? false;
+  // }
+
+  //Login
+  // Future<void> setUserLogged() async {
+  //   _sharedPreferences.setBool(PREFS_KEY_IS_USER_LOGGED_IN, true);
+  // }
+  //
+  // Future<bool> isUserLogged() async {
+  //   return _sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN) ?? false;
+  // }
+
+  //register
+  //
+  //
+  // Future<void> logout() async {
+  //   _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
+  // }
 }

@@ -7,12 +7,13 @@ class DioFactory {
   static Dio? dio;
 
   static Dio getDio() {
-    Duration timeOut = const Duration(minutes: 1);
+    Duration timeOut = const Duration(milliseconds: Constants.apiTimeOut);
 
     if (dio == null) {
       dio = Dio();
       dio!
         ..options.connectTimeout = timeOut
+        ..options.sendTimeout = timeOut
         ..options.receiveTimeout = timeOut;
       addDioHeaders();
       addDioInterceptor();
@@ -37,12 +38,14 @@ class DioFactory {
   }
 
   static void addDioInterceptor() {
-    dio?.interceptors.add(
-      PrettyDioLogger(
-        requestBody: true,
-        requestHeader: true,
-        responseHeader: true,
-      ),
-    );
+    if (!kReleaseMode) {
+      dio?.interceptors.add(
+        PrettyDioLogger(
+          requestBody: true,
+          requestHeader: true,
+          responseHeader: true,
+        ),
+      );
+    }
   }
 }

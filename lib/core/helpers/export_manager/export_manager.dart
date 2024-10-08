@@ -1,6 +1,9 @@
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:design_system/core/helpers/constants/constants.dart';
 import 'package:design_system/core/helpers/constants/keys.dart';
+import 'package:design_system/core/helpers/enum/language_type.dart';
 import 'package:design_system/core/networking/apis/api_error_model.dart';
 import 'package:design_system/core/networking/apis/api_service.dart';
 import 'package:dio/dio.dart';
@@ -34,11 +37,13 @@ part './../../theming/theming_manager/theme_manager.dart';
 part './../adaptive/adaptive_layout.dart';
 part './../extensions/align_extension.dart';
 part './../extensions/color_extension.dart';
+part './../extensions/lanuage_type_extension.dart';
 part './../extensions/responsive_size_extension.dart';
 part './../extensions/snack_bar_extension.dart';
 part './../extensions/string_extension.dart';
 part './../extensions/theme_extension.dart';
 part './../extensions/widget_extension.dart';
+part './../functions/app_localizations.dart';
 part './../functions/app_logs.dart';
 part './../functions/remove_spacing.dart';
 part './../functions/select_photo_from_gallery_or_camera.dart';
