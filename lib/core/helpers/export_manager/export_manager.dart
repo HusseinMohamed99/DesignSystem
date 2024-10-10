@@ -19,6 +19,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part '../extensions/date_time_extension.dart';
+part '../extensions/language_type_extension.dart';
 part '../extensions/navigation_extension.dart';
 part '../extensions/text_styles_extension.dart';
 part '../extensions/ui_extension.dart';
@@ -37,7 +38,6 @@ part './../../theming/theming_manager/theme_manager.dart';
 part './../adaptive/adaptive_layout.dart';
 part './../extensions/align_extension.dart';
 part './../extensions/color_extension.dart';
-part './../extensions/lanuage_type_extension.dart';
 part './../extensions/responsive_size_extension.dart';
 part './../extensions/snack_bar_extension.dart';
 part './../extensions/string_extension.dart';
