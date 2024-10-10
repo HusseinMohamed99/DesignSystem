@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
     return ScreenUtilInit(
         designSize: const Size(360, 690),
         minTextAdapt: true,
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
                       start: 1921, end: double.infinity, name: '4K'),
                 ],
               ),
+              // Using "navigatorKey.currentState?.pushNamed(route, arguments: arguments);"
+              navigatorKey: navigatorKey,
               title: 'Flutter Demo',
               theme: ThemeData(
                 // This is the theme of your application.
