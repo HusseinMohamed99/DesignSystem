@@ -1,5 +1,5 @@
 import 'package:design_system/core/routing/routes.dart';
-import 'package:design_system/features/on_boarding/presentation/onboarding_view.dart';
+import 'package:design_system/features/onboarding/presentation/onboarding_view.dart';
 import 'package:flutter/material.dart';
 
 class AppRouters {
