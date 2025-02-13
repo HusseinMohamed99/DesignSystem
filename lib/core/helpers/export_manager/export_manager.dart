@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:design_system/core/helpers/constants/constants.dart';
 import 'package:design_system/core/helpers/constants/keys.dart';
-import 'package:design_system/core/helpers/enum/language_type.dart';
 import 'package:design_system/core/networking/apis/api_error_model.dart';
 import 'package:design_system/core/networking/apis/api_service.dart';
 import 'package:design_system/core/networking/cache_helper/shared_pref_helper.dart';
@@ -17,8 +14,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-part '../extensions/date_time_extension.dart';
-part '../extensions/language_type_extension.dart';
 part '../extensions/navigation_extension.dart';
 part '../extensions/text_styles_extension.dart';
 part '../extensions/ui_extension.dart';
@@ -38,7 +33,6 @@ part './../extensions/responsive_size_extension.dart';
 part './../extensions/snack_bar_extension.dart';
 part './../extensions/theme_extension.dart';
 part './../extensions/widget_extension.dart';
-part './../functions/app_localizations.dart';
 part './../functions/remove_spacing.dart';
 part './../functions/select_photo_from_gallery_or_camera.dart';
 part './../functions/url_launcher.dart';

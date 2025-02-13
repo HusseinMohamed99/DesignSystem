@@ -1,11 +1,14 @@
-part of './../export_manager/export_manager.dart';
+import 'dart:convert';
+
+import 'package:design_system/core/helpers/extensions/language_type_extension.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class AppLocalizations {
-  final Locale? locale;
-
   AppLocalizations({
     this.locale,
   });
+  final Locale? locale;
 
   static AppLocalizations? of(BuildContext context) {
     return Localizations.of<AppLocalizations>(context, AppLocalizations);
@@ -18,7 +21,7 @@ class AppLocalizations {
 
   Future loadJsonLanguage() async {
     String jsonString = await rootBundle.loadString(
-        "$assetPathLocal/${locale!.languageCode}-${locale!.countryCode}.json");
+        '$assetPathLocal/${locale!.languageCode}-${locale!.countryCode}.json');
 
     Map<String, dynamic> jsonMap = json.decode(jsonString);
     _localizedStrings = jsonMap.map((key, value) {
@@ -26,7 +29,7 @@ class AppLocalizations {
     });
   }
 
-  String translate(String key) => _localizedStrings[key] ?? "";
+  String translate(String key) => _localizedStrings[key] ?? '';
 }
 
 class _AppLocalizationsDelegate
