@@ -2,12 +2,12 @@ part of './../export_manager/export_manager.dart';
 
 extension HexColorExtension on String {
   toColor() {
-    var hexColor = replaceAll("#", "");
+    var hexColor = replaceAll('#', '');
     if (hexColor.length == 6) {
-      hexColor = "FF$hexColor";
+      hexColor = 'FF$hexColor';
     }
     if (hexColor.length == 8) {
-      return Color(int.parse("0x$hexColor"));
+      return Color(int.parse('0x$hexColor'));
     }
   }
 }
