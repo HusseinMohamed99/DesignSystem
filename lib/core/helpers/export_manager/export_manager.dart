@@ -9,13 +9,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get_it/get_it.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
-import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 part '../extensions/text_styles_extension.dart';
 part '../extensions/ui_extension.dart';
-part './../../../main.dart';
 part './../../di/dependency_injection.dart';
 part './../../networking/apis/api_error_handler.dart';
 part './../../networking/apis/dio_factory.dart';
