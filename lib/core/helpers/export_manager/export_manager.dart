@@ -15,7 +15,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 part '../extensions/text_styles_extension.dart';
 part '../extensions/ui_extension.dart';
-part '../value_manager/size_helper.dart';
 part './../../../main.dart';
 part './../../di/dependency_injection.dart';
 part './../../networking/apis/api_error_handler.dart';
@@ -27,4 +26,3 @@ part './../extensions/theme_extension.dart';
 part './../functions/remove_spacing.dart';
 part './../functions/select_photo_from_gallery_or_camera.dart';
 part './../functions/url_launcher.dart';
-part './../value_manager/padding_helper.dart';

@@ -1,11 +1,10 @@
-
-import 'package:design_system/core/helpers/export_manager/export_manager.dart';
+import 'package:design_system/core/helpers/value_manager/dimensions.dart';
 import 'package:design_system/core/theming/style_manager/text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-ThemeData buildLightTheme(BuildContext context) {
 
+ThemeData buildLightTheme(BuildContext context) {
   const primaryColor = Colors.lightBlue;
   const backgroundColor = Colors.white60;
 
@@ -60,8 +59,8 @@ InputDecorationTheme _buildInputDecorationTheme(BuildContext context) {
     filled: true,
     fillColor: Colors.white,
     contentPadding: EdgeInsets.symmetric(
-      vertical: PaddingHelper.p16.h,
-      horizontal: PaddingHelper.p16.w,
+      vertical: kPaddingDefaultVertical.h,
+      horizontal: kPaddingDefaultHorizontal.w,
     ),
     hintStyle: StyleManager.labelLarge(context).copyWith(color: Colors.green),
     labelStyle: StyleManager.labelLarge(context).copyWith(color: Colors.red),
@@ -82,8 +81,8 @@ InputDecorationTheme _buildInputDecorationTheme(BuildContext context) {
 // Helper for OutlineInputBorder
 OutlineInputBorder _buildOutlineInputBorder(Color borderColor) {
   return OutlineInputBorder(
-    borderRadius: BorderRadius.circular(SizeHelper.s16),
-    borderSide: BorderSide(color: borderColor, width: SizeHelper.s1),
+    borderRadius: BorderRadius.circular(kBorderRadiusDefault.r),
+    borderSide: BorderSide(color: borderColor, width: 1.w),
   );
 }
 
