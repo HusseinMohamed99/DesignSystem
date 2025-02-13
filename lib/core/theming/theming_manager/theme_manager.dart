@@ -1,6 +1,11 @@
-part of './../../helpers/export_manager/export_manager.dart';
 
+import 'package:design_system/core/helpers/export_manager/export_manager.dart';
+import 'package:design_system/core/theming/style_manager/text_style.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 ThemeData buildLightTheme(BuildContext context) {
+
   const primaryColor = Colors.lightBlue;
   const backgroundColor = Colors.white60;
 

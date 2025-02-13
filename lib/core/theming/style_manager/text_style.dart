@@ -1,4 +1,10 @@
-part of './../../helpers/export_manager/export_manager.dart';
+
+import 'package:design_system/core/helpers/responsive/responsive_font_size.dart';
+import 'package:design_system/core/theming/style_manager/font_family.dart';
+import 'package:design_system/core/theming/style_manager/font_size.dart';
+import 'package:design_system/core/theming/style_manager/font_weight.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class StyleManager {
   static TextStyle headlineLarge(context) {

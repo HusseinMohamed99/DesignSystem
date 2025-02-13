@@ -1,4 +1,4 @@
-part of './../../helpers/export_manager/export_manager.dart';
+import 'package:flutter/material.dart';
 
 class FontWeightHelper {
   static const FontWeight thin = FontWeight.w100;

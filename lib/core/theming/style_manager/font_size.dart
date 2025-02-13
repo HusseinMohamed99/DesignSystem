@@ -1,4 +1,5 @@
-part of './../../helpers/export_manager/export_manager.dart';
+
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class FontSizeHelper {
   static double s10 = 10.0.sp;
