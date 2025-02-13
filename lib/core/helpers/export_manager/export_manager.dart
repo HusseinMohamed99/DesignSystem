@@ -15,7 +15,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 part '../extensions/text_styles_extension.dart';
 part '../extensions/ui_extension.dart';
-part '../string_manager/validation_message.dart';
 part '../value_manager/size_helper.dart';
 part './../../../main.dart';
 part './../../di/dependency_injection.dart';
