@@ -60,41 +60,71 @@ class S {
     );
   }
 
-  /// `Already have an account?`
-  String get have_account {
+  /// `Full name can't be empty`
+  String get full_name_empty {
     return Intl.message(
-      'Already have an account?',
-      name: 'have_account',
+      'Full name can\'t be empty',
+      name: 'full_name_empty',
       desc: '',
       args: [],
     );
   }
 
-  /// `By creating an account, you agree to:`
-  String get you_agree_to {
+  /// `Full name must be at least 3 characters`
+  String get full_name_minimum_length {
     return Intl.message(
-      'By creating an account, you agree to:',
-      name: 'you_agree_to',
+      'Full name must be at least 3 characters',
+      name: 'full_name_minimum_length',
       desc: '',
       args: [],
     );
   }
 
-  /// `Terms of Service`
-  String get terms_of_service {
+  /// `Full name must be at most 20 characters`
+  String get full_name_maximum_length {
     return Intl.message(
-      'Terms of Service',
-      name: 'terms_of_service',
+      'Full name must be at most 20 characters',
+      name: 'full_name_maximum_length',
       desc: '',
       args: [],
     );
   }
 
-  /// `Privacy Policy`
-  String get privacy_policy {
+  /// `Phone`
+  String get phone {
     return Intl.message(
-      'Privacy Policy',
-      name: 'privacy_policy',
+      'Phone',
+      name: 'phone',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number can't be empty`
+  String get phone_empty {
+    return Intl.message(
+      'Phone number can\'t be empty',
+      name: 'phone_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get phone_valid {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'phone_valid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message(
+      'Email',
+      name: 'email',
       desc: '',
       args: [],
     );
@@ -120,11 +150,51 @@ class S {
     );
   }
 
-  /// `Email already exists`
-  String get email_already_exists {
+  /// `OTP`
+  String get otp {
     return Intl.message(
-      'Email already exists',
-      name: 'email_already_exists',
+      'OTP',
+      name: 'otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP can't be empty`
+  String get otp_empty {
+    return Intl.message(
+      'OTP can\'t be empty',
+      name: 'otp_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid OTP`
+  String get otp_valid {
+    return Intl.message(
+      'Please enter a valid OTP',
+      name: 'otp_valid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP must be 4 digits`
+  String get otp_length {
+    return Intl.message(
+      'OTP must be 4 digits',
+      name: 'otp_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
       desc: '',
       args: [],
     );
@@ -195,146 +265,6 @@ class S {
     return Intl.message(
       'Password must contain at least one special character',
       name: 'password_missing_special',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Full name can't be empty`
-  String get full_name_empty {
-    return Intl.message(
-      'Full name can\'t be empty',
-      name: 'full_name_empty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Full name must be at least 3 characters`
-  String get full_name_minimum_length {
-    return Intl.message(
-      'Full name must be at least 3 characters',
-      name: 'full_name_minimum_length',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Full name must be at most 20 characters`
-  String get full_name_maximum_length {
-    return Intl.message(
-      'Full name must be at most 20 characters',
-      name: 'full_name_maximum_length',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Phone number can't be empty`
-  String get phone_empty {
-    return Intl.message(
-      'Phone number can\'t be empty',
-      name: 'phone_empty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter a valid phone number`
-  String get phone_valid {
-    return Intl.message(
-      'Please enter a valid phone number',
-      name: 'phone_valid',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Phone number already exists`
-  String get phone_already_exists {
-    return Intl.message(
-      'Phone number already exists',
-      name: 'phone_already_exists',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `OTP can't be empty`
-  String get otp_empty {
-    return Intl.message(
-      'OTP can\'t be empty',
-      name: 'otp_empty',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Please enter a valid OTP`
-  String get otp_valid {
-    return Intl.message(
-      'Please enter a valid OTP',
-      name: 'otp_valid',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `OTP must be 4 digits`
-  String get otp_length {
-    return Intl.message(
-      'OTP must be 4 digits',
-      name: 'otp_length',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `OTP`
-  String get otp {
-    return Intl.message(
-      'OTP',
-      name: 'otp',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `Phone Number`
-  String get phone_number {
-    return Intl.message(
-      'Phone Number',
-      name: 'phone_number',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The password provided is too weak.`
-  String get weak_password_error {
-    return Intl.message(
-      'The password provided is too weak.',
-      name: 'weak_password_error',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `The account already exists for that email.`
-  String get email_already_inUse_error {
-    return Intl.message(
-      'The account already exists for that email.',
-      name: 'email_already_inUse_error',
-      desc: '',
-      args: [],
-    );
-  }
-
-  /// `An error occurred, please try again later.`
-  String get general_error {
-    return Intl.message(
-      'An error occurred, please try again later.',
-      name: 'general_error',
       desc: '',
       args: [],
     );

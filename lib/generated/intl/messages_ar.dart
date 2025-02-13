@@ -22,10 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-        "email_already_exists": MessageLookupByLibrary.simpleMessage(
-            "البريد الإلكتروني موجود بالفعل"),
-        "email_already_inUse_error": MessageLookupByLibrary.simpleMessage(
-            "عنوان البريد الإلكتروني قيد الاستخدام بالفعل بواسطة حساب آخر."),
+        "email": MessageLookupByLibrary.simpleMessage("البريد الإلكترونى"),
         "email_empty": MessageLookupByLibrary.simpleMessage(
             "لا يمكن ترك البريد الإلكترونى فارغًا"),
         "email_valid": MessageLookupByLibrary.simpleMessage(
@@ -37,10 +34,6 @@ class MessageLookup extends MessageLookupByLibrary {
             "يجب أن يحتوي الاسم الكامل على 20 حرفًا كحد أقصى"),
         "full_name_minimum_length": MessageLookupByLibrary.simpleMessage(
             "يجب أن يحتوي الاسم الكامل على 3 أحرف على الأقل"),
-        "general_error": MessageLookupByLibrary.simpleMessage(
-            "حدث خطأ غير معروف. يرجى المحاولة لاحقًا."),
-        "have_account":
-            MessageLookupByLibrary.simpleMessage("تمتلك حساب بالفعل؟"),
         "otp": MessageLookupByLibrary.simpleMessage("رمز التحقق"),
         "otp_empty": MessageLookupByLibrary.simpleMessage(
             "لا يمكن ترك رمز التحقق فارغًا"),
@@ -48,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "الرمز التحقق يجب على الأقل 4 رقم"),
         "otp_valid": MessageLookupByLibrary.simpleMessage(
             "الرجاء إدخال رمز التحقق صالح"),
+        "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
         "password_does_not_match":
             MessageLookupByLibrary.simpleMessage("كلمات المرور لا تتطابق"),
         "password_empty": MessageLookupByLibrary.simpleMessage(
@@ -62,19 +56,10 @@ class MessageLookup extends MessageLookupByLibrary {
             "كلمة المرور يجب أن تحتوي على رمز خاص"),
         "password_missing_uppercase": MessageLookupByLibrary.simpleMessage(
             "كلمة المرور يجب أن تحتوي على حروف كبيرة"),
-        "phone_already_exists":
-            MessageLookupByLibrary.simpleMessage("رقم الهاتف موجود بالفعل"),
+        "phone": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
         "phone_empty": MessageLookupByLibrary.simpleMessage(
             "لا يمكن ترك رقم الهاتف فارغًا"),
         "phone_valid":
-            MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم هاتف صالح"),
-        "privacy_policy":
-            MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
-        "terms_of_service":
-            MessageLookupByLibrary.simpleMessage("الشروط والأحكام الخاصة بنا"),
-        "weak_password_error": MessageLookupByLibrary.simpleMessage(
-            "كلمة المرور ضعيفة جدًا. يرجى تقديم كلمة مرور أقوى."),
-        "you_agree_to": MessageLookupByLibrary.simpleMessage(
-            "من خلال إنشاء حساب، فإنك توافق على")
+            MessageLookupByLibrary.simpleMessage("الرجاء إدخال رقم هاتف صالح")
       };
 }
