@@ -1,4 +1,6 @@
-part of './../export_manager/export_manager.dart';
+import 'dart:developer';
+
+import 'package:flutter/foundation.dart';
 
 class AppLogs {
   AppLogs._();
@@ -48,6 +50,16 @@ class AppLogs {
         '\x1B[31m$tag ❌❌❌❌❌❌❌❌❌❌❌❌❌: $message\x1B[0m',
         name: 'Error $_getCurrentTime',
         level: 3,
+      );
+    }
+  } //*close
+
+  static void closeLog(String message, [String tag = 'Close']) {
+    if (kDebugMode) {
+      log(
+        '\x1B[39m$tag ❌❌❌❌❌❌❌❌❌❌❌❌❌: $message\x1B[0m',
+        name: 'Close $_getCurrentTime',
+        level: 4,
       );
     }
   }

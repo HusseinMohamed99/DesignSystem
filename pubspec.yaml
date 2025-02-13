@@ -5,6 +5,7 @@ environment:
   sdk: '^3.5.3'
 description: A new Flutter project.
 dependencies:
+  bloc: ^8.1.4
   cupertino_icons: '^1.0.8'
   dio: '^5.7.0'
   flutter:
