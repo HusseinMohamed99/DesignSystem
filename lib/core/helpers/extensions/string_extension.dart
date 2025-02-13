@@ -1,9 +1,12 @@
+import 'package:design_system/core/helpers/functions/app_localizations.dart';
+import 'package:flutter/material.dart';
+
 extension StringExtension on String {
   /// Localizations
 
-  // String translate({BuildContext? context}) {
-  //   return AppLocalizations.of(context!)!.translate(this);
-  // }
+  String translate({BuildContext? context}) {
+    return AppLocalizations.of(context!)!.translate(this);
+  }
 
   /// Check is String is English
 
