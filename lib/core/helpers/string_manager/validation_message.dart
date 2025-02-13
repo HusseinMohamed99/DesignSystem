@@ -41,8 +41,8 @@ class ValidationMessage {
   static const String dateOfBirthDayValidate = 'Please Enter a Valid Day';
 
   //Message Validate
-  static const String messageValid = "Please Enter a Valid Message";
+  static const String messageValid = 'Please Enter a Valid Message';
 
   //PhoneNumber Validate
-  static const String phoneValid = "Please Enter a Valid Phone Number";
+  static const String phoneValid = 'Please Enter a Valid Phone Number';
 }
