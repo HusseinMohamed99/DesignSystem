@@ -34,8 +34,6 @@ part './../../theming/style_manager/font_weight.dart';
 part './../../theming/style_manager/text_style.dart';
 part './../../theming/theming_manager/theme_manager.dart';
 part './../adaptive/adaptive_layout.dart';
-part './../extensions/align_extension.dart';
-part './../extensions/color_extension.dart';
 part './../extensions/responsive_size_extension.dart';
 part './../extensions/snack_bar_extension.dart';
 part './../extensions/theme_extension.dart';

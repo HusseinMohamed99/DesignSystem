@@ -1,4 +1,5 @@
-part of './../export_manager/export_manager.dart';
+
+import 'package:flutter/material.dart';
 
 extension AlignedText on Widget {
   alignAtStart() {
