@@ -1,5 +1,3 @@
-part of './../export_manager/export_manager.dart';
-
 extension StringExtension on String {
   /// Localizations
 

@@ -40,7 +40,6 @@ part './../extensions/align_extension.dart';
 part './../extensions/color_extension.dart';
 part './../extensions/responsive_size_extension.dart';
 part './../extensions/snack_bar_extension.dart';
-part './../extensions/string_extension.dart';
 part './../extensions/theme_extension.dart';
 part './../extensions/widget_extension.dart';
 part './../functions/app_localizations.dart';
