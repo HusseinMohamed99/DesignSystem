@@ -37,14 +37,14 @@ A **Design System** is a comprehensive guide that defines the design standards, 
 - 🧭 **Navigation**: Styles for menus, tabs, and sidebars that enable navigation.
   - Example: Side navigation with highlighted active items and proper spacing.
   
-- 🖼️ **Modals/Dialogs**: Defines modal appearance and behaviour, including modal backgrounds and close buttons.
+- 🖼️ **Modals/Dialogs**: Defines modal appearance and behavior, including modal backgrounds and close buttons.
 
 ### 3. Patterns 🧩
 
 - ⚠️ **Feedback**: Consistent styles for alerts, notifications, success, error, and warning messages.
   - Example: **Green for success**, **red for error**, with corresponding iconography.
   
-- 🎬 **Animations & Transitions**: Defines component behaviour during interactions, such as transitions.
+- 🎬 **Animations & Transitions**: Defines component behavior during interactions, such as transitions.
   - Example: **Smooth fade-ins** for modals and **button scaling** when clicked.
   
 - ⏳ **Loading States**: Visual indicators like spinners or skeleton loaders during processing.
@@ -52,7 +52,7 @@ A **Design System** is a comprehensive guide that defines the design standards, 
 
 ### 4. Accessibility Guidelines ♿
 
-- 🎨 **Contrast Ratios**: Ensures text and background colours meet WCAG (Web Content Accessibility Guidelines) contrast standards.
+- 🎨 **Contrast Ratios**: Ensures text and background colors meet WCAG (Web Content Accessibility Guidelines) contrast standards.
   
 - ⌨️ **Keyboard Navigation**: Ensures all interactive elements can be navigated via keyboard.
   
