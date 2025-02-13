@@ -21,5 +21,61 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+  static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "email_already_exists":
+            MessageLookupByLibrary.simpleMessage("Email already exists"),
+        "email_already_inUse_error": MessageLookupByLibrary.simpleMessage(
+            "The account already exists for that email."),
+        "email_empty":
+            MessageLookupByLibrary.simpleMessage("Email can\'t be empty"),
+        "email_valid": MessageLookupByLibrary.simpleMessage(
+            "Please enter a valid email address"),
+        "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
+        "full_name_empty":
+            MessageLookupByLibrary.simpleMessage("Full name can\'t be empty"),
+        "full_name_maximum_length": MessageLookupByLibrary.simpleMessage(
+            "Full name must be at most 20 characters"),
+        "full_name_minimum_length": MessageLookupByLibrary.simpleMessage(
+            "Full name must be at least 3 characters"),
+        "general_error": MessageLookupByLibrary.simpleMessage(
+            "An error occurred, please try again later."),
+        "have_account":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "otp": MessageLookupByLibrary.simpleMessage("OTP"),
+        "otp_empty":
+            MessageLookupByLibrary.simpleMessage("OTP can\'t be empty"),
+        "otp_length":
+            MessageLookupByLibrary.simpleMessage("OTP must be 4 digits"),
+        "otp_valid":
+            MessageLookupByLibrary.simpleMessage("Please enter a valid OTP"),
+        "password_does_not_match":
+            MessageLookupByLibrary.simpleMessage("Passwords don\'t match"),
+        "password_empty":
+            MessageLookupByLibrary.simpleMessage("Password can\'t be empty"),
+        "password_length": MessageLookupByLibrary.simpleMessage(
+            "Password must be at least 8 characters"),
+        "password_missing_lowercase": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one lowercase letter"),
+        "password_missing_number": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one number"),
+        "password_missing_special": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one special character"),
+        "password_missing_uppercase": MessageLookupByLibrary.simpleMessage(
+            "Password must contain at least one uppercase letter"),
+        "phone_already_exists":
+            MessageLookupByLibrary.simpleMessage("Phone number already exists"),
+        "phone_empty": MessageLookupByLibrary.simpleMessage(
+            "Phone number can\'t be empty"),
+        "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
+        "phone_valid": MessageLookupByLibrary.simpleMessage(
+            "Please enter a valid phone number"),
+        "privacy_policy":
+            MessageLookupByLibrary.simpleMessage("Privacy Policy"),
+        "terms_of_service":
+            MessageLookupByLibrary.simpleMessage("Terms of Service"),
+        "weak_password_error": MessageLookupByLibrary.simpleMessage(
+            "The password provided is too weak."),
+        "you_agree_to": MessageLookupByLibrary.simpleMessage(
+            "By creating an account, you agree to:")
+      };
 }

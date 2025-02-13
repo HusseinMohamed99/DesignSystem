@@ -49,6 +49,296 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `Full Name`
+  String get full_name {
+    return Intl.message(
+      'Full Name',
+      name: 'full_name',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Already have an account?`
+  String get have_account {
+    return Intl.message(
+      'Already have an account?',
+      name: 'have_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `By creating an account, you agree to:`
+  String get you_agree_to {
+    return Intl.message(
+      'By creating an account, you agree to:',
+      name: 'you_agree_to',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Terms of Service`
+  String get terms_of_service {
+    return Intl.message(
+      'Terms of Service',
+      name: 'terms_of_service',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Privacy Policy`
+  String get privacy_policy {
+    return Intl.message(
+      'Privacy Policy',
+      name: 'privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email can't be empty`
+  String get email_empty {
+    return Intl.message(
+      'Email can\'t be empty',
+      name: 'email_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid email address`
+  String get email_valid {
+    return Intl.message(
+      'Please enter a valid email address',
+      name: 'email_valid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email already exists`
+  String get email_already_exists {
+    return Intl.message(
+      'Email already exists',
+      name: 'email_already_exists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password can't be empty`
+  String get password_empty {
+    return Intl.message(
+      'Password can\'t be empty',
+      name: 'password_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must be at least 8 characters`
+  String get password_length {
+    return Intl.message(
+      'Password must be at least 8 characters',
+      name: 'password_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords don't match`
+  String get password_does_not_match {
+    return Intl.message(
+      'Passwords don\'t match',
+      name: 'password_does_not_match',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one uppercase letter`
+  String get password_missing_uppercase {
+    return Intl.message(
+      'Password must contain at least one uppercase letter',
+      name: 'password_missing_uppercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one lowercase letter`
+  String get password_missing_lowercase {
+    return Intl.message(
+      'Password must contain at least one lowercase letter',
+      name: 'password_missing_lowercase',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one number`
+  String get password_missing_number {
+    return Intl.message(
+      'Password must contain at least one number',
+      name: 'password_missing_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password must contain at least one special character`
+  String get password_missing_special {
+    return Intl.message(
+      'Password must contain at least one special character',
+      name: 'password_missing_special',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name can't be empty`
+  String get full_name_empty {
+    return Intl.message(
+      'Full name can\'t be empty',
+      name: 'full_name_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name must be at least 3 characters`
+  String get full_name_minimum_length {
+    return Intl.message(
+      'Full name must be at least 3 characters',
+      name: 'full_name_minimum_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Full name must be at most 20 characters`
+  String get full_name_maximum_length {
+    return Intl.message(
+      'Full name must be at most 20 characters',
+      name: 'full_name_maximum_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number can't be empty`
+  String get phone_empty {
+    return Intl.message(
+      'Phone number can\'t be empty',
+      name: 'phone_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get phone_valid {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'phone_valid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number already exists`
+  String get phone_already_exists {
+    return Intl.message(
+      'Phone number already exists',
+      name: 'phone_already_exists',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP can't be empty`
+  String get otp_empty {
+    return Intl.message(
+      'OTP can\'t be empty',
+      name: 'otp_empty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid OTP`
+  String get otp_valid {
+    return Intl.message(
+      'Please enter a valid OTP',
+      name: 'otp_valid',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP must be 4 digits`
+  String get otp_length {
+    return Intl.message(
+      'OTP must be 4 digits',
+      name: 'otp_length',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `OTP`
+  String get otp {
+    return Intl.message(
+      'OTP',
+      name: 'otp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phone_number {
+    return Intl.message(
+      'Phone Number',
+      name: 'phone_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The password provided is too weak.`
+  String get weak_password_error {
+    return Intl.message(
+      'The password provided is too weak.',
+      name: 'weak_password_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email.`
+  String get email_already_inUse_error {
+    return Intl.message(
+      'The account already exists for that email.',
+      name: 'email_already_inUse_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred, please try again later.`
+  String get general_error {
+    return Intl.message(
+      'An error occurred, please try again later.',
+      name: 'general_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
@@ -57,6 +347,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   List<Locale> get supportedLocales {
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
+      Locale.fromSubtags(languageCode: 'ar'),
     ];
   }
 

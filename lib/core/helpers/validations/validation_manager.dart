@@ -1,120 +1,108 @@
-part of './../export_manager/export_manager.dart';
+import 'package:design_system/core/helpers/extensions/localization_extension.dart';
+import 'package:flutter/material.dart';
 
 class ValidationManager {
-  static String? displayNameValidator(String? displayName) {
-    if (displayName == null ||
-        displayName.isEmpty ||
-        displayName.trim().isEmpty) {
-      return ValidationMessage.nameValid;
+  static String? displayNameValidator(
+    BuildContext context,
+    String? displayName,
+  ) {
+    final localization = context.localization;
+    if (_isNullOrEmpty(displayName)) {
+      return localization.full_name_empty;
     }
-    if (displayName.length < 3 || displayName.length > 20) {
-      return ValidationMessage.nameValid;
+    if (displayName!.length < 3) {
+      return localization.full_name_minimum_length;
     }
-    return null;
-  }
-
-  static String? phoneValidator(String? phone) {
-    if (phone == null || phone.isEmpty || phone.trim().isEmpty) {
-      return ValidationMessage.phoneValid;
-    }
-    RegExp regex = RegExp(r'^(010|011|012|015)[0-9]{8}$');
-    if (!regex.hasMatch(phone)) {
-      return 'ValidationMessage';
+    if (displayName.length > 20) {
+      return localization.full_name_maximum_length;
     }
     return null;
   }
 
-  static String? emailValidator(String? value) {
-    if (value == null || value.isEmpty || value.trim().isEmpty) {
-      return ValidationMessage.emailValid;
+  static String? phoneValidator(BuildContext context, String? phone) {
+    final localization = context.localization;
+    if (_isNullOrEmpty(phone)) {
+      return localization.phone_empty;
     }
-    if (!RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
-        .hasMatch(value)) {
-      return ValidationMessage.emailValid;
-    }
-    return null;
-  }
-
-  static String? otpValidator(String? value) {
-    if (value == null || value.isEmpty || value.trim().isEmpty) {
-      return ValidationMessage.otpValid;
-    }
-    if (!RegExp(r'^(?=.*?[0-9])').hasMatch(value)) {
-      return ValidationMessage.otpValid;
+    if (!_isValidPhone(phone!)) {
+      return localization.phone_valid;
     }
     return null;
   }
 
-  static String? passwordValidator(String? value) {
-    if (value == null || value.isEmpty || value.trim().isEmpty) {
-      return ValidationMessage.passwordValid;
+  static String? emailValidator(BuildContext context, String? value) {
+    final localization = context.localization;
+    if (_isNullOrEmpty(value)) {
+      return localization.email_empty;
     }
-    if (value.length < 8) {
-      return ValidationMessage.passwordError2;
-    }
-    RegExp regex = RegExp(
-        r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#^~`+])[A-Za-z\d@$!%*?&#^~`+]{8,}$");
-    var passNonNullValue = value;
-    if (!regex.hasMatch(passNonNullValue)) {
-      return ValidationMessage.passwordError1;
+    if (!_isValidEmail(value!)) {
+      return localization.email_valid;
     }
     return null;
   }
 
-  static bool isEmailValid(String email) {
-    return RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
-        .hasMatch(email);
+  static String? otpValidator(BuildContext context, String? value) {
+    final localization = context.localization;
+    if (_isNullOrEmpty(value)) {
+      return localization.otp_empty;
+    }
+    if (!_isValidOtp(value!)) {
+      return localization.otp_valid;
+    }
+    return null;
   }
 
-  static bool isPasswordValid(String password) {
-    return RegExp(
-            r"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&]{8,}$#")
-        .hasMatch(password);
+  static String? passwordValidator(BuildContext context, String? value) {
+    final localization = context.localization;
+    if (_isNullOrEmpty(value)) {
+      return localization.password_empty;
+    }
+    if (!hasMinLength(value!)) {
+      return localization.password_length;
+    }
+    if (!hasLowerCase(value)) {
+      return localization.password_missing_lowercase;
+    }
+    if (!hasUpperCase(value)) {
+      return localization.password_missing_uppercase;
+    }
+    if (!hasNumber(value)) {
+      return localization.password_missing_number;
+    }
+    if (!hasSpecialCharacter(value)) {
+      return localization.password_missing_special;
+    }
+    return null;
   }
 
-  static String? repeatPasswordValidator({String? value, String? password}) {
+  static String? repeatPasswordValidator(
+    BuildContext context, {
+    String? value,
+    String? password,
+  }) {
+    final localization = context.localization;
     if (value != password) {
-      return ValidationMessage.passwordNoMatch;
+      return localization.password_does_not_match;
     }
     return null;
   }
 
-  static String? birthDateValidator(String? value) {
-    if (value == null || value.trim().isEmpty) {
-      return ValidationMessage.dateOfBirthValid;
-    }
+  static bool _isNullOrEmpty(String? value) =>
+      value == null || value.trim().isEmpty;
 
-    final now = DateTime.now();
-    final eighteenYearsAgo = now.subtract(const Duration(days: 6570));
-    final seventyYearsAgo = now.subtract(const Duration(days: 25550));
+  static bool _isValidPhone(String phone) {
+    final regex = RegExp(r'^(010|011|012|015)[0-9]{8}$');
+    return regex.hasMatch(phone);
+  }
 
-    // Split the input string into day, month, and year
-    final dateParts = value.split('-');
-    if (dateParts.length != 3) {
-      return ValidationMessage.dateOfBirthValid;
-    }
+  static bool _isValidEmail(String email) {
+    final regex = RegExp(r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$');
+    return regex.hasMatch(email);
+  }
 
-    final day = int.tryParse(dateParts[0]) ?? -1;
-    final month = int.tryParse(dateParts[1]) ?? -1;
-    final year = int.tryParse(dateParts[2]) ?? -1;
-
-    if (day < 1 || day > 31) {
-      return ValidationMessage.dateOfBirthDayValidate;
-    }
-
-    if (month < 1 || month > 12) {
-      return ValidationMessage.dateOfBirthMonthValidate;
-    }
-
-    if (year > now.year || year < seventyYearsAgo.year) {
-      return ValidationMessage.dateOfBirthYearValidate;
-    }
-
-    if (year > eighteenYearsAgo.year) {
-      return ValidationMessage.dateOfBirthError1;
-    }
-
-    return null;
+  static bool _isValidOtp(String otp) {
+    final regex = RegExp(r'^(?=.*?[0-9])');
+    return regex.hasMatch(otp);
   }
 
   static bool hasLowerCase(String password) {
@@ -134,6 +122,6 @@ class ValidationManager {
   }
 
   static bool hasMinLength(String password) {
-    return RegExp(r'^(?=.{8,})').hasMatch(password);
+    return password.length >= 8;
   }
 }
