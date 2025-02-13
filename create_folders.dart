@@ -3,7 +3,7 @@ import 'dart:io';
 
 void main() {
   //project path
-  final projectPath = "${Directory.current.path}/lib/core";
+  final projectPath = '${Directory.current.path}/lib/core';
 
   //folder creation
   final directories = [

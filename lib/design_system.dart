@@ -1,5 +1,4 @@
 import 'package:design_system/core/helpers/constants/keys.dart';
-import 'package:design_system/core/helpers/export_manager/export_manager.dart';
 import 'package:design_system/core/routing/app_router.dart';
 import 'package:design_system/core/routing/routes.dart';
 import 'package:design_system/generated/l10n.dart';
