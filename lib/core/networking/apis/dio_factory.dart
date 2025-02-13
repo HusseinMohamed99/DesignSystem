@@ -1,7 +1,8 @@
 part of './../../helpers/export_manager/export_manager.dart';
 
 class DioFactory {
-  /// private constructor as I don't want to allow creating an instance of this class
+  /// private constructor as I don't want
+  /// to allow creating an instance of this class
   DioFactory._();
 
   static Dio? dio;
@@ -26,8 +27,9 @@ class DioFactory {
   static void addDioHeaders() async {
     dio?.options.headers = {
       'Accept': 'application/json',
-      'Authorization':
-          'Bearer ${await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken)}',
+      'Authorization': 'Bearer ${await CachingHelper.getSecuredString(
+        SharedPrefKeys.userToken,
+      )}',
     };
   }
 

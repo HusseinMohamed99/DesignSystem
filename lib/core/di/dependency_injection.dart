@@ -8,9 +8,10 @@ Future<void> setupGetIt() async {
   getIt.registerLazySingleton<SharedPreferences>(() => sharedPreferences);
   // AppPreferences instance
   // final appPreferences = AppPreferences(instance());
-  getIt
-      .registerLazySingleton<SharedPrefHelper>(() => SharedPrefHelper(getIt()));
+  await CachingHelper.init();
+
   // Dio & ApiService
   Dio dio = DioFactory.getDio();
   getIt.registerSingleton<ApiService>(ApiService(dio));
 }
+

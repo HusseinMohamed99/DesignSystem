@@ -1,43 +1,38 @@
-part of './../../helpers/export_manager/export_manager.dart';
+import 'package:design_system/core/helpers/functions/app_logs.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-const String PREFS_KEY_LANG = "PREFS_KEY_LANG";
-const String PREFS_KEY_THEME = "PREFS_KEY_THEME";
-const String PREFS_KEY_ON_BOARDING_SCREEN_VIEWED =
-    "PREFS_KEY_ON_BOARDING_SCREEN_VIEWED";
-const String PREFS_KEY_IS_USER_LOGGED_IN = "PREFS_KEY_IS_USER_LOGGED_IN";
-
-/// Utility class for managing SharedPreferences and FlutterSecureStorage operations.
-class SharedPrefHelper {
+class CachingHelper {
   // Private constructor to prevent instantiation.
-  final SharedPreferences _sharedPreferences;
-  SharedPrefHelper(this._sharedPreferences);
+  CachingHelper._();
 
+  static late SharedPreferences _preferences;
   // Singleton instance for SharedPreferences.
-  static final Future<SharedPreferences> _prefs =
-      SharedPreferences.getInstance();
+  static Future<void> init() async {
+    _preferences = await SharedPreferences.getInstance();
+  }
 
   // Singleton instance for FlutterSecureStorage.
   static const FlutterSecureStorage _secureStorage = FlutterSecureStorage();
 
   /// Removes a value from SharedPreferences with the given [key].
   static Future<void> removeData(String key) async {
-    debugPrint('SharedPrefHelper: Removing data with key: $key');
-    final SharedPreferences prefs = await _prefs;
+    _logAction('Removing data', key);
+    final prefs = _preferences;
     await prefs.remove(key);
   }
 
   /// Clears all keys and values in SharedPreferences.
   static Future<void> clearAllData() async {
-    debugPrint('SharedPrefHelper: Clearing all data');
-    final SharedPreferences prefs = await _prefs;
+    _logAction('Clearing all SharedPreferences data');
+    final prefs = _preferences;
     await prefs.clear();
   }
 
-  /// Saves a [value] with a [key] in SharedPreferences.
-  static Future<void> setData(String key, dynamic value) async {
-    final SharedPreferences prefs = await _prefs;
-    debugPrint(
-        'SharedPrefHelper: Setting data with key: $key and value: $value');
+  /// Saves a value in SharedPreferences with the given [key].
+  static setData(String key, dynamic value) async {
+    _logAction('Setting data', key, value);
+    final prefs = _preferences;
 
     if (value is String) {
       await prefs.setString(key, value);
@@ -50,138 +45,82 @@ class SharedPrefHelper {
     } else if (value is List<String>) {
       await prefs.setStringList(key, value);
     } else {
-      debugPrint(
-          'SharedPrefHelper: Unsupported value type: ${value.runtimeType}');
+      AppLogs.debugLog('Unsupported value type: ${value.runtimeType}');
     }
+  }
+
+  /// Retrieves a value from SharedPreferences based on its type.
+  static getData<T>(String key) {
+    _logAction('Getting data', key);
+    final prefs = _preferences;
+    return prefs.get(key) as T?;
   }
 
   /// Gets a bool value from SharedPreferences with the given [key].
   static Future<bool> getBool(String key) async {
-    debugPrint('SharedPrefHelper: Getting bool value with key: $key');
-    final SharedPreferences prefs = await _prefs;
+    AppLogs.debugLog('SharedPrefHelper: Getting bool value with key: $key');
+    final prefs = _preferences;
     return prefs.getBool(key) ?? false;
   }
 
   /// Gets a double value from SharedPreferences with the given [key].
   static Future<double> getDouble(String key) async {
-    debugPrint('SharedPrefHelper: Getting double value with key: $key');
-    final SharedPreferences prefs = await _prefs;
+    AppLogs.debugLog('SharedPrefHelper: Getting double value with key: $key');
+    final prefs = _preferences;
     return prefs.getDouble(key) ?? 0.0;
   }
 
   /// Gets an int value from SharedPreferences with the given [key].
   static Future<int> getInt(String key) async {
-    debugPrint('SharedPrefHelper: Getting int value with key: $key');
-    final SharedPreferences prefs = await _prefs;
+    AppLogs.debugLog('SharedPrefHelper: Getting int value with key: $key');
+    final prefs = _preferences;
     return prefs.getInt(key) ?? 0;
   }
 
   /// Gets a String value from SharedPreferences with the given [key].
-  static Future<String> getString(String key) async {
-    debugPrint('SharedPrefHelper: Getting String value with key: $key');
-    final SharedPreferences prefs = await _prefs;
+  static getString(String key) {
+    AppLogs.debugLog('SharedPrefHelper: Getting String value with key: $key');
+    final prefs = _preferences;
     return prefs.getString(key) ?? '';
-  }
-
-  /// Gets a dynamic value from SharedPreferences with the given [key].
-  static Future<dynamic> getData(String key) async {
-    debugPrint('SharedPrefHelper: Getting dynamic value with key: $key');
-    final SharedPreferences prefs = await _prefs;
-    return prefs.get(key);
   }
 
   /// Gets a list of String values from SharedPreferences with the given [key].
   static Future<List<String>> getListString(String key) async {
-    debugPrint('SharedPrefHelper: Getting List<String> value with key: $key');
-    final SharedPreferences prefs = await _prefs;
+    AppLogs.debugLog(
+        'SharedPrefHelper: Getting List<String> value with key: $key');
+    final prefs = _preferences;
     return prefs.getStringList(key) ?? [];
-  }
-
-  /// Saves a [value] with a [key] in FlutterSecureStorage.
-  static Future<void> setSecuredString(String key, String value) async {
-    debugPrint(
-        'FlutterSecureStorage: Setting secured string with key: $key and value: $value');
-    await _secureStorage.write(key: key, value: value);
-  }
-
-  /// Gets a String value from FlutterSecureStorage with the given [key].
-  static Future<String> getSecuredString(String key) async {
-    debugPrint('FlutterSecureStorage: Getting secured string with key: $key');
-    return await _secureStorage.read(key: key) ?? '';
-  }
-
-  /// Clears all keys and values in FlutterSecureStorage.
-  static clearAllSecuredData() async {
-    debugPrint('FlutterSecureStorage: Clearing all data');
-    await _secureStorage.deleteAll();
   }
 
   /// Removes a specific key from FlutterSecureStorage.
   static Future<void> clearSecuredData(String key) async {
-    debugPrint('FlutterSecureStorage: Removing data with key: $key');
+    _logAction('Removing secured data', key);
     await _secureStorage.delete(key: key);
   }
 
-  String getAppLanguage() {
-    String? language = _sharedPreferences.getString(PREFS_KEY_LANG);
-    if (language != null && language.isNotEmpty) {
-      return language;
-    } else {
-      // return default lang
-      return LanguageType.english.getValue();
-    }
+  /// Clears all keys and values in FlutterSecureStorage.
+  static Future<void> clearAllSecuredData() async {
+    _logAction('Clearing all secured data');
+    await _secureStorage.deleteAll();
   }
 
-  bool isEnglish() {
-    return getAppLanguage() == LanguageType.english.getValue();
+  /// Saves a secured string value in FlutterSecureStorage.
+  static Future<void> setSecuredString(String key, String value) async {
+    _logAction('Setting secured string', key, value);
+    await _secureStorage.write(key: key, value: value);
   }
 
-  Future<void> changeAppLanguage() async {
-    String currentLang = getAppLanguage();
-
-    if (currentLang == LanguageType.arabic.getValue()) {
-      // set english
-      _sharedPreferences.setString(
-          PREFS_KEY_LANG, LanguageType.english.getValue());
-    } else {
-      // set arabic
-      _sharedPreferences.setString(
-          PREFS_KEY_LANG, LanguageType.arabic.getValue());
-    }
+  /// Retrieves a secured string value from FlutterSecureStorage.
+  static Future<String> getSecuredString(String key) async {
+    _logAction('Getting secured string', key);
+    return await _secureStorage.read(key: key) ?? '';
   }
 
-  Locale getLocal() {
-    String currentLang = getAppLanguage();
-
-    if (currentLang == LanguageType.arabic.getValue()) {
-      return arabicLocal;
-    } else {
-      return englishLocal;
-    }
+  /// Internal utility method to log actions.
+  static void _logAction(String action, [String? key, dynamic value]) {
+    final message = value != null
+        ? 'CachingHelper: $action with key: $key and value: $value'
+        : 'CachingHelper: $action with key: $key';
+    AppLogs.debugLog(message);
   }
-
-  //OnBoarding
-  // Future<void> setOnBoardingScreenViewed() async {
-  //   _sharedPreferences.setBool(PREFS_KEY_ON_BOARDING_SCREEN_VIEWED, true);
-  // }
-  //
-  // Future<bool> isOnBoardingScreenViewed() async {
-  //   return _sharedPreferences.getBool(PREFS_KEY_ON_BOARDING_SCREEN_VIEWED) ?? false;
-  // }
-
-  //Login
-  // Future<void> setUserLogged() async {
-  //   _sharedPreferences.setBool(PREFS_KEY_IS_USER_LOGGED_IN, true);
-  // }
-  //
-  // Future<bool> isUserLogged() async {
-  //   return _sharedPreferences.getBool(PREFS_KEY_IS_USER_LOGGED_IN) ?? false;
-  // }
-
-  //register
-  //
-  //
-  // Future<void> logout() async {
-  //   _sharedPreferences.remove(PREFS_KEY_IS_USER_LOGGED_IN);
-  // }
 }
