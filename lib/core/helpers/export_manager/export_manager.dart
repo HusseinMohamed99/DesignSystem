@@ -31,7 +31,6 @@ part './../adaptive/adaptive_layout.dart';
 part './../extensions/responsive_size_extension.dart';
 part './../extensions/snack_bar_extension.dart';
 part './../extensions/theme_extension.dart';
-part './../extensions/widget_extension.dart';
 part './../functions/remove_spacing.dart';
 part './../functions/select_photo_from_gallery_or_camera.dart';
 part './../functions/url_launcher.dart';
