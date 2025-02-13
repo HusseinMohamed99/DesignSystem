@@ -57,7 +57,7 @@ class AppLogs {
   static void closeLog(String message, [String tag = 'Close']) {
     if (kDebugMode) {
       log(
-        '\x1B[39m$tag ❌❌❌❌❌❌❌❌❌❌❌❌❌: $message\x1B[0m',
+        '\x1B[39m$tag 👋👋👋👋👋👋👋👋👋👋👋👋👋 : $message\x1B[0m',
         name: 'Close $_getCurrentTime',
         level: 4,
       );
