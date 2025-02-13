@@ -14,7 +14,6 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-part '../extensions/navigation_extension.dart';
 part '../extensions/text_styles_extension.dart';
 part '../extensions/ui_extension.dart';
 part '../string_manager/validation_message.dart';

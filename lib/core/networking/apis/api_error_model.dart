@@ -1,15 +1,12 @@
-import 'package:design_system/core/helpers/export_manager/export_manager.dart';
+import 'package:design_system/core/helpers/extensions/navigation_extension.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'api_error_model.g.dart';
 
 @JsonSerializable()
 class ApiErrorModel {
-  final String? message;
-  final int? code;
-  final bool? status;
-  @JsonKey(name: 'data')
-  final Map<String, dynamic>? errors;
+  factory ApiErrorModel.fromJson(Map<String, dynamic> json) =>
+      _$ApiErrorModelFromJson(json);
 
   ApiErrorModel({
     this.message,
@@ -17,9 +14,11 @@ class ApiErrorModel {
     this.status,
     this.errors,
   });
-
-  factory ApiErrorModel.fromJson(Map<String, dynamic> json) =>
-      _$ApiErrorModelFromJson(json);
+  final String? message;
+  final int? code;
+  final bool? status;
+  @JsonKey(name: 'data')
+  final Map<String, dynamic>? errors;
 
   Map<String, dynamic> toJson() => _$ApiErrorModelToJson(this);
 
@@ -29,12 +28,10 @@ class ApiErrorModel {
     final errorMessage = errors!.entries.map((entry) {
       final value = entry.value;
       return "${value.join(',')}";
-    }).join("\n");
+    }).join('\n');
     return errorMessage;
   }
 }
-
-
 
 /// Example Error
 /*{
