@@ -35,3 +35,5 @@ dev_dependencies:
   pubspec_dependency_sorter: '^1.0.5'
 flutter:
   uses-material-design: true
+flutter_intl:
+  enabled: true
